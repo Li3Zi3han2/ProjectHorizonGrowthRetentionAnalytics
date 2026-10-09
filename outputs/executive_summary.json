@@ -1,0 +1,58 @@
+{
+  "users": 200000,
+  "simulation_days": 180,
+  "seed": 20261005,
+  "overall_d1": 0.320561420466273,
+  "overall_d7": 0.17005398705991093,
+  "overall_d30": 0.10438152384524033,
+  "activation_rate": 0.8875409629442904,
+  "activation_definition": "D7 core-loop unlock: D0-D7 unlock among mature D7 registrations",
+  "largest_core_funnel_drop": "chapter_2",
+  "largest_core_funnel_drop_fraction": 0.2809079182494882,
+  "largest_optional_adoption_drop": "social_interaction",
+  "highest_risk_device": "Android",
+  "device_d7_gap": 0.0329625497919529,
+  "chapter3_completion_given_chapter2": 0.7264334145217562,
+  "chapter3_gate_level": 12,
+  "chapter3_gate_failure_rate": 0.6267082741357147,
+  "top_churn_signals": [
+    "active_days_d0_7",
+    "chapter_reached_d7",
+    "sessions_d0_7",
+    "activity_participation_d0_7",
+    "avg_session_minutes"
+  ],
+  "churn_signal_families": [
+    "早期活跃强度",
+    "主线进度",
+    "activity_participation_d0_7"
+  ],
+  "model_auc": 0.6839645854953073,
+  "model_pr_auc": 0.7700623264891899,
+  "model_brier": 0.2161033672616404,
+  "lift_at_10pct": 1.4414196410566646,
+  "capture_at_10pct": 0.14414196410566646,
+  "nonlinear_auc": 0.6842591978955271,
+  "nonlinear_auc_gain": 0.00029461240021988466,
+  "model_comparison_narrative": "非线性模型没有产生实质 discrimination gain；当前瓶颈更可能是可观测信息。Logistic 的解释性与较低部署成本适合作为运营 ranking baseline。",
+  "reactivation_eligible": 68635,
+  "reactivation_count": 10140,
+  "reactivation_rate": 0.14773803453048737,
+  "post_return_active_days": 2.5505917159763314,
+  "payer_conversion": 0.033185,
+  "arpu": 0.4240542,
+  "key_recommendations": [
+    "首次 Level 12 尝试时随机验证关卡优化",
+    "按设备市场版本分层随机验证性能改善",
+    "D7 top10% 保留对照验证扶持；回流用户随机比较导航"
+  ],
+  "parity": {
+    "descriptive_checks": 1601,
+    "model_checks": 22,
+    "failures": 0,
+    "status": "PASS"
+  },
+  "run_mode": "full",
+  "portfolio_pages": 11,
+  "disclosure": "Project Horizon is a fictional game. All user-level and event-level data in this repository are synthetically generated for portfolio demonstration purposes. No proprietary, confidential, or real player data are used."
+}

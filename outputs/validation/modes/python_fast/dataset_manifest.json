@@ -1,0 +1,451 @@
+{
+  "row_counts": {
+    "users": 20000,
+    "sessions": 242108,
+    "progression": 180704,
+    "gameplay_events": 396646,
+    "monetization": 950,
+    "acquisition": 20000,
+    "content_exposure": 25429
+  },
+  "table_sha256": {
+    "users": "808d7e466c6f6882ee425f9c431ec7e61e54eb40bb157a8a6e3ad05667c801e2",
+    "sessions": "1748ba52c3a1d8d60ea174042c77e7a00d10a680b3788ce55ea5e5717b0d2d27",
+    "progression": "6e3a6a644a2c9559edcd0e1d162b8d4fc87a025a9ada63173b94c7b6cbe988a2",
+    "gameplay_events": "c1527e1ea1cd09ad29001e31d99efa1b2263d6c6341c975182d6d3622a234585",
+    "monetization": "d04635dcfe12d5f12d7a024a8dcf2839740b4cd8dd94232085329b261cf1ecd2",
+    "acquisition": "342204740bca96280d1e9fb230657e75f1b099eb0170755757f97d865683c240",
+    "content_exposure": "29c76e83ca9164c37cd4a7a698b46bf507556fbcf89af06f847b0bbefd4ae23b"
+  },
+  "dataset_sha256": "dc1ea620730be445e1345d837c9857115a2203ee7dd0dd8a0a68b68fe7fb54fb",
+  "scale": "fast",
+  "expected_users": 20000,
+  "actual_users": 20000,
+  "generator": "Python",
+  "seed": 20261005,
+  "parameters": {
+    "users": 200000,
+    "fast_users": 20000,
+    "simulation_days": 180,
+    "seed": 20261005,
+    "start_date": "2026-01-01",
+    "end_date": "2026-06-29",
+    "batch_size": 1000,
+    "observation_window": [
+      0,
+      7
+    ],
+    "target_window": [
+      22,
+      30
+    ],
+    "train_end_day": 89,
+    "validation_end_day": 119,
+    "nonlinear_training_cap": 30000,
+    "absolute_tolerance": 1e-10,
+    "relative_tolerance": 1e-08
+  },
+  "schema_version": "horizon-1",
+  "generator_sha256": "716f5fe64130733a13cd4581c4345389d683bab776acf47e956a1620f427206f",
+  "code_sha256": "1b580987914a985b51f6504325a181955cb3aefef07173fb7107a0d62dfe1f5e",
+  "schema": {
+    "columns": [
+      [
+        "acquisition",
+        "user_id",
+        "bigint",
+        "NO"
+      ],
+      [
+        "acquisition",
+        "market",
+        "text",
+        "NO"
+      ],
+      [
+        "acquisition",
+        "channel",
+        "text",
+        "NO"
+      ],
+      [
+        "acquisition",
+        "campaign",
+        "text",
+        "NO"
+      ],
+      [
+        "acquisition",
+        "creative",
+        "text",
+        "NO"
+      ],
+      [
+        "acquisition",
+        "acquisition_date",
+        "date",
+        "NO"
+      ],
+      [
+        "content_exposure",
+        "user_id",
+        "bigint",
+        "NO"
+      ],
+      [
+        "content_exposure",
+        "date",
+        "date",
+        "NO"
+      ],
+      [
+        "content_exposure",
+        "content_type",
+        "text",
+        "NO"
+      ],
+      [
+        "content_exposure",
+        "content_id",
+        "text",
+        "NO"
+      ],
+      [
+        "content_exposure",
+        "exposed",
+        "integer",
+        "NO"
+      ],
+      [
+        "content_exposure",
+        "clicked",
+        "integer",
+        "NO"
+      ],
+      [
+        "gameplay_events",
+        "event_id",
+        "bigint",
+        "NO"
+      ],
+      [
+        "gameplay_events",
+        "user_id",
+        "bigint",
+        "NO"
+      ],
+      [
+        "gameplay_events",
+        "event_time",
+        "timestamp without time zone",
+        "NO"
+      ],
+      [
+        "gameplay_events",
+        "event_type",
+        "text",
+        "NO"
+      ],
+      [
+        "gameplay_events",
+        "event_value",
+        "double precision",
+        "NO"
+      ],
+      [
+        "monetization",
+        "transaction_id",
+        "bigint",
+        "NO"
+      ],
+      [
+        "monetization",
+        "user_id",
+        "bigint",
+        "NO"
+      ],
+      [
+        "monetization",
+        "transaction_date",
+        "date",
+        "NO"
+      ],
+      [
+        "monetization",
+        "product_type",
+        "text",
+        "NO"
+      ],
+      [
+        "monetization",
+        "amount_usd",
+        "numeric",
+        "NO"
+      ],
+      [
+        "progression",
+        "user_id",
+        "bigint",
+        "NO"
+      ],
+      [
+        "progression",
+        "event_date",
+        "date",
+        "NO"
+      ],
+      [
+        "progression",
+        "chapter",
+        "integer",
+        "NO"
+      ],
+      [
+        "progression",
+        "level",
+        "integer",
+        "NO"
+      ],
+      [
+        "progression",
+        "tutorial_completed",
+        "integer",
+        "NO"
+      ],
+      [
+        "progression",
+        "core_loop_unlocked",
+        "integer",
+        "NO"
+      ],
+      [
+        "progression",
+        "boss_attempts",
+        "integer",
+        "NO"
+      ],
+      [
+        "progression",
+        "boss_failures",
+        "integer",
+        "NO"
+      ],
+      [
+        "run_metadata",
+        "key",
+        "text",
+        "NO"
+      ],
+      [
+        "run_metadata",
+        "value",
+        "text",
+        "NO"
+      ],
+      [
+        "sessions",
+        "session_id",
+        "bigint",
+        "NO"
+      ],
+      [
+        "sessions",
+        "user_id",
+        "bigint",
+        "NO"
+      ],
+      [
+        "sessions",
+        "session_date",
+        "date",
+        "NO"
+      ],
+      [
+        "sessions",
+        "session_number",
+        "integer",
+        "NO"
+      ],
+      [
+        "sessions",
+        "session_minutes",
+        "double precision",
+        "NO"
+      ],
+      [
+        "sessions",
+        "device",
+        "text",
+        "NO"
+      ],
+      [
+        "sessions",
+        "fps_quality_bucket",
+        "integer",
+        "NO"
+      ],
+      [
+        "sessions",
+        "crash_flag",
+        "integer",
+        "NO"
+      ],
+      [
+        "users",
+        "user_id",
+        "bigint",
+        "NO"
+      ],
+      [
+        "users",
+        "register_date",
+        "date",
+        "NO"
+      ],
+      [
+        "users",
+        "market",
+        "text",
+        "NO"
+      ],
+      [
+        "users",
+        "acquisition_channel",
+        "text",
+        "NO"
+      ],
+      [
+        "users",
+        "campaign",
+        "text",
+        "NO"
+      ],
+      [
+        "users",
+        "device",
+        "text",
+        "NO"
+      ],
+      [
+        "users",
+        "platform",
+        "text",
+        "NO"
+      ],
+      [
+        "users",
+        "age_bucket",
+        "text",
+        "NO"
+      ],
+      [
+        "users",
+        "latent_player_archetype",
+        "text",
+        "NO"
+      ],
+      [
+        "users",
+        "acquisition_quality",
+        "double precision",
+        "NO"
+      ]
+    ],
+    "constraints": [
+      [
+        "acquisition",
+        "FOREIGN KEY (user_id) REFERENCES <dataset>.users(user_id)"
+      ],
+      [
+        "acquisition",
+        "PRIMARY KEY (user_id)"
+      ],
+      [
+        "content_exposure",
+        "FOREIGN KEY (user_id) REFERENCES <dataset>.users(user_id)"
+      ],
+      [
+        "content_exposure",
+        "PRIMARY KEY (user_id, date, content_id)"
+      ],
+      [
+        "gameplay_events",
+        "FOREIGN KEY (user_id) REFERENCES <dataset>.users(user_id)"
+      ],
+      [
+        "gameplay_events",
+        "PRIMARY KEY (event_id)"
+      ],
+      [
+        "monetization",
+        "CHECK ((amount_usd >= (0)::numeric))"
+      ],
+      [
+        "monetization",
+        "FOREIGN KEY (user_id) REFERENCES <dataset>.users(user_id)"
+      ],
+      [
+        "monetization",
+        "PRIMARY KEY (transaction_id)"
+      ],
+      [
+        "progression",
+        "FOREIGN KEY (user_id) REFERENCES <dataset>.users(user_id)"
+      ],
+      [
+        "progression",
+        "PRIMARY KEY (user_id, event_date)"
+      ],
+      [
+        "run_metadata",
+        "PRIMARY KEY (key)"
+      ],
+      [
+        "sessions",
+        "CHECK (((fps_quality_bucket >= 1) AND (fps_quality_bucket <= 3)))"
+      ],
+      [
+        "sessions",
+        "CHECK ((crash_flag = ANY (ARRAY[0, 1])))"
+      ],
+      [
+        "sessions",
+        "CHECK ((session_minutes > (0)::double precision))"
+      ],
+      [
+        "sessions",
+        "FOREIGN KEY (user_id) REFERENCES <dataset>.users(user_id)"
+      ],
+      [
+        "sessions",
+        "PRIMARY KEY (session_id)"
+      ],
+      [
+        "users",
+        "PRIMARY KEY (user_id)"
+      ]
+    ]
+  },
+  "checks": {
+    "user_identity": 0,
+    "acquisition_complete": 0,
+    "registration_session": 0,
+    "registration_range": 0,
+    "session_dates": 0,
+    "session_sequence": 0,
+    "progression_rules": 0,
+    "event_dates": 0,
+    "progression_dates": 0,
+    "payment_dates": 0,
+    "exposure_dates": 0,
+    "foreign_keys": 0
+  },
+  "status": "COMPLETE",
+  "run_id": "27d7c61f-caca-45ab-b93d-d644f755ed90",
+  "generated_at": "2026-10-09T05:48:28.084716+00:00",
+  "location": {
+    "database": "horizon_python_reproduction_20261009",
+    "schema": "p3_python_fast"
+  },
+  "random_algorithm": "NumPy RandomState MT19937 per user; different draws from Wolfram"
+}

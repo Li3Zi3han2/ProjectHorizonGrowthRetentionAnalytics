@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "mode": "fast",
+  "users": 20000,
+  "code_sha256": "cb0903f84c2e2fdf28660f5f2e4a84affa4a6d3f2423d5941b0e92840510c54f",
+  "first_20000_fact_sha256": {
+    "users": "30cb9da1c006c291c7a12350ccad4a942ec8cbdb2ea05d9fabc02d7e780940a0",
+    "sessions": "ec44d971cf63df5f421c06ead02ba30a6635655b46ebe6b61decdc5359866f79",
+    "progression": "bcec9037d7856de9bf7ef73152a37652d9528829de0097a148de140a18fd76f6",
+    "gameplay_events": "774ad17ed6a3c6bff3ed270b35af5c3955a4ef82f2fc3a010a65bc3a73894717",
+    "monetization": "05b241178e190f44a7882f5f226253956c49afcd44d575410fc7c677323a1ed2",
+    "acquisition": "c75aba765e2bb0eb90e060d5c2c1e0de477798979eb101c42a871a67d586058a",
+    "content_exposure": "42f1364a72608915ac202331cf787fa2714c7d4791d00cdc0dfc24231f301f2e"
+  },
+  "same_seed_prefix_verified": true,
+  "tests": 53,
+  "parity": {
+    "descriptive_checks": 1601,
+    "model_checks": 22,
+    "failures": 0,
+    "status": "PASS"
+  },
+  "executed_at": "2026-10-08T12:17:45.128584+00:00"
+}

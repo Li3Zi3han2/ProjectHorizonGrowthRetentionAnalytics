@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "fingerprint_algorithm": "horizon-source-v2-posix-ordinal-raw-bytes",
+  "scope": "dual_engine",
+  "scale": "fast",
+  "run_id": "c9dd34b9-4010-4a70-a161-38f5e6979424",
+  "code_sha256": "7a9221744120121441e0415e87cfeb77b32074e831e7728e87ad7dca966d5332",
+  "dataset_sha256": "ad168c2e02b285d5044c597cdd40d63cd3963928c5cf82d53732fdb5b5eb6212",
+  "stages": {
+    "database_connection": "PASS",
+    "dataset_validation": "PASS",
+    "wolfram_analysis": "PASS",
+    "python_analysis": "PASS",
+    "parity": "PASS",
+    "pdf": "PASS",
+    "wolfram_selftest": "PASS",
+    "notebook": "PASS",
+    "tests": "PASS",
+    "portfolio_provenance": "PASS",
+    "final_pdf": "PASS",
+    "output_validation": "PASS",
+    "dataset_unchanged": "PASS",
+    "code_unchanged": "PASS"
+  },
+  "validation": {
+    "status": "PASS",
+    "scope": "dual",
+    "tests": 119,
+    "skipped": 12,
+    "figures": 17,
+    "wolfram_figures": 19,
+    "pdf_pages": null,
+    "input_fingerprint": "ad168c2e02b285d5044c597cdd40d63cd3963928c5cf82d53732fdb5b5eb6212",
+    "pdf_numeric_content": "PENDING_USER_RENDER"
+  },
+  "parity": "PASS",
+  "executed_at": "2026-10-09T06:17:04.145741+00:00"
+}

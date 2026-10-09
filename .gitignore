@@ -1,0 +1,14 @@
+.venv/
+.local/
+.env
+__pycache__/
+.pytest_cache/
+*.pyc
+outputs/staging/
+outputs/runs/
+outputs/models/*.wxf
+outputs/models/*.joblib
+outputs/models/*predictions.csv
+outputs/tables/*features.csv
+tmp/
+release/

@@ -1,0 +1,276 @@
+(* Content-type: application/vnd.wolfram.cdf.text *)
+
+(*** Wolfram CDF File ***)
+(* http://www.wolfram.com/cdf *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*************************************************************************)
+(*                                                                       *)
+(*                                                                       *)
+(*  This file was created under the Wolfram Enterprise licensing terms.  *)
+(*                                                                       *)
+(*       For additional information concerning CDF licensing see:        *)
+(*                                                                       *)
+(*        www.wolfram.com/cdf/adopting-cdf/licensing-options.html        *)
+(*                                                                       *)
+(*                                                                       *)
+(*                                                                       *)
+(*************************************************************************)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[      1060,         20]
+NotebookDataLength[     10360,        254]
+NotebookOptionsPosition[      8366,        226]
+NotebookOutlinePosition[      8702,        241]
+CellTagsIndexPosition[      8659,        238]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Project Horizon: Growth and Retention", "Title",ExpressionUUID->"14953a80-2da2-bb47-911f-2268c8725f4d"],
+
+Cell["\<\
+Fictional game. All data are synthetic. PostgreSQL is the single source of \
+truth.\
+\>", "Text",ExpressionUUID->"eb96c185-0ff5-5445-bd6b-09fd43a6522e"],
+
+Cell["\<\
+Run the headless pipeline first; notebook cells only present its outputs.\
+\>", "Text",ExpressionUUID->"4c4038d2-d965-e643-b45d-ad9fb97a7b51"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"root", " ", "=", " ", 
+   RowBox[{"ParentDirectory", "[", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}]}], ";", " ", 
+  RowBox[{"summary", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+       "root", ",", " ", "\"\<outputs\>\"", ",", 
+        " ", "\"\<executive_summary.json\>\""}], "}"}], "]"}], ",", 
+     " ", "\"\<RawJSON\>\""}], "]"}]}], ";", " ", 
+  RowBox[{"Dataset", "[", "summary", "]"}]}]], "Input",ExpressionUUID->\
+"2c08500d-3a54-7c43-80e7-f83595b329eb"],
+
+Cell["KPI", "Section",ExpressionUUID->"39c89d9b-00f5-1048-91cf-50026d0d39fc"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<daily_kpis.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"939e42ef-f3ad-\
+7145-9c0c-e847c819ebb5"],
+
+Cell["Retention", "Section",ExpressionUUID->"e101825a-30a6-eb4a-a15b-cc94acd80bec"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<retention_curve.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"5e1dceb5-11de-\
+904a-b72d-3d5359423b6c"],
+
+Cell["Core progression funnel", "Section",ExpressionUUID->"56c8ec7e-eca6-4349-ac01-9994d2f3f356"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<core_funnel.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"dc2a4488-4d98-\
+be46-aa7d-aee67f741f4d"],
+
+Cell["Optional adoption: Chapter3 denominator", "Section",ExpressionUUID->"38548f5a-17c3-d149-8421-e0ccb24f6dcd"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<optional_adoption.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"28d14234-600b-\
+d841-9dd6-8c14c6ea81f7"],
+
+Cell["Actual gate / level diagnosis", "Section",ExpressionUUID->"00ee91b6-c76c-fb4b-806f-46d03ecc42c4"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<progression_diagnosis.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"d8091ab4-eb5e-\
+4e4e-8298-b70dcf60a54a"],
+
+Cell["Multi-session observable features", "Section",ExpressionUUID->"3b629133-5206-c349-81be-a822aa9ec65b"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<wolfram_features.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"f4fe65fa-69af-\
+4140-903f-5b91ae23109d"],
+
+Cell["Correlated engagement family", "Section",ExpressionUUID->"325dba13-28cc-8844-839f-d4c5e25b4c48"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<feature_correlations.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"fef0f267-0d3d-\
+a148-a5f5-d57f3483ffe4"],
+
+Cell["Model interpretation", "Section",ExpressionUUID->"df7a5a39-54d7-0e49-91f3-cb2ee70d3c24"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<logistic_coefficients.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"35afa28f-b66b-\
+7f42-8cb4-be9c260a350e"],
+
+Cell["Segments", "Section",ExpressionUUID->"640cb6d6-fe22-a541-a45e-a547c886d444"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<segments.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"a4f0f764-6f94-\
+b344-bddd-f494852530eb"],
+
+Cell["Gate experiment eligibility / power", "Section",ExpressionUUID->"d132d7c1-e3b6-3348-8c30-8ccdef280ca3"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<experiment_design.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"620cfd12-c72b-\
+8e47-9d1d-8e17d1163ede"],
+
+Cell["Data quality", "Section",ExpressionUUID->"049c0e58-8be3-2441-87c1-e1ba87f5d9b4"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<tables\>\"", ",", 
+      " ", "\"\<data_quality_summary.csv\>\""}], "}"}], "]"}], ",", 
+   " ", "\"\<Dataset\>\""}], "]"}]], "Input",ExpressionUUID->"3b4b125a-241c-\
+9d43-97cc-46d2920e91c6"],
+
+Cell["\<\
+Corrected classification metrics; threshold0.5 is diagnostic, operations uses \
+top10% ranking. D7 core-loop unlock is distinct from exact D7 retention.\
+\>", "Text",ExpressionUUID->"4e6c5741-ad8a-4849-accc-640dabd9f2c6"],
+
+Cell[BoxData[
+ RowBox[{"Dataset", "[", 
+  RowBox[{"Import", "[", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+      "root", ",", " ", "\"\<outputs\>\"", ",", " ", "\"\<models\>\"", ",", 
+       " ", "\"\<wolfram_evaluation.json\>\""}], "}"}], "]"}], ",", 
+    " ", "\"\<RawJSON\>\""}], "]"}], "]"}]], "Input",ExpressionUUID->\
+"df5a38e5-92c9-ae44-9fda-ddb9d70aec88"],
+
+Cell["\<\
+Observational association is not a causal effect. Validate interventions with \
+randomized experiments.\
+\>", "Text",ExpressionUUID->"86cce042-4de5-eb47-80b8-956e554b76eb"]
+},
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (2026\:5e747\:67082\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"8c781e70-c389-cf42-aff6-1ce237e2f4be"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[1460, 33, 109, 0, 70, "Title",ExpressionUUID->"14953a80-2da2-bb47-911f-2268c8725f4d"],
+Cell[1572, 35, 165, 3, 70, "Text",ExpressionUUID->"eb96c185-0ff5-5445-bd6b-09fd43a6522e"],
+Cell[1737, 40, 154, 2, 70, "Text",ExpressionUUID->"4c4038d2-d965-e643-b45d-ad9fb97a7b51"],
+Cell[1892, 44, 604, 15, 70, "Input",ExpressionUUID->"2c08500d-3a54-7c43-80e7-f83595b329eb"],
+Cell[2484, 61, 77, 0, 70, "Section",ExpressionUUID->"39c89d9b-00f5-1048-91cf-50026d0d39fc"],
+Cell[2564, 63, 361, 9, 70, "Input",ExpressionUUID->"939e42ef-f3ad-7145-9c0c-e847c819ebb5"],
+Cell[2919, 74, 83, 0, 70, "Section",ExpressionUUID->"e101825a-30a6-eb4a-a15b-cc94acd80bec"],
+Cell[3005, 76, 366, 9, 70, "Input",ExpressionUUID->"5e1dceb5-11de-904a-b72d-3d5359423b6c"],
+Cell[3365, 87, 97, 0, 70, "Section",ExpressionUUID->"56c8ec7e-eca6-4349-ac01-9994d2f3f356"],
+Cell[3465, 89, 362, 9, 70, "Input",ExpressionUUID->"dc2a4488-4d98-be46-aa7d-aee67f741f4d"],
+Cell[3821, 100, 113, 0, 70, "Section",ExpressionUUID->"38548f5a-17c3-d149-8421-e0ccb24f6dcd"],
+Cell[3937, 102, 368, 9, 70, "Input",ExpressionUUID->"28d14234-600b-d841-9dd6-8c14c6ea81f7"],
+Cell[4299, 113, 103, 0, 70, "Section",ExpressionUUID->"00ee91b6-c76c-fb4b-806f-46d03ecc42c4"],
+Cell[4405, 115, 372, 9, 70, "Input",ExpressionUUID->"d8091ab4-eb5e-4e4e-8298-b70dcf60a54a"],
+Cell[4771, 126, 107, 0, 70, "Section",ExpressionUUID->"3b629133-5206-c349-81be-a822aa9ec65b"],
+Cell[4881, 128, 367, 9, 70, "Input",ExpressionUUID->"f4fe65fa-69af-4140-903f-5b91ae23109d"],
+Cell[5242, 139, 102, 0, 70, "Section",ExpressionUUID->"325dba13-28cc-8844-839f-d4c5e25b4c48"],
+Cell[5347, 141, 371, 9, 70, "Input",ExpressionUUID->"fef0f267-0d3d-a148-a5f5-d57f3483ffe4"],
+Cell[5712, 152, 94, 0, 70, "Section",ExpressionUUID->"df7a5a39-54d7-0e49-91f3-cb2ee70d3c24"],
+Cell[5809, 154, 372, 9, 70, "Input",ExpressionUUID->"35afa28f-b66b-7f42-8cb4-be9c260a350e"],
+Cell[6175, 165, 82, 0, 70, "Section",ExpressionUUID->"640cb6d6-fe22-a541-a45e-a547c886d444"],
+Cell[6260, 167, 359, 9, 70, "Input",ExpressionUUID->"a4f0f764-6f94-b344-bddd-f494852530eb"],
+Cell[6613, 178, 109, 0, 70, "Section",ExpressionUUID->"d132d7c1-e3b6-3348-8c30-8ccdef280ca3"],
+Cell[6725, 180, 368, 9, 70, "Input",ExpressionUUID->"620cfd12-c72b-8e47-9d1d-8e17d1163ede"],
+Cell[7087, 191, 86, 0, 70, "Section",ExpressionUUID->"049c0e58-8be3-2441-87c1-e1ba87f5d9b4"],
+Cell[7176, 193, 371, 9, 70, "Input",ExpressionUUID->"3b4b125a-241c-9d43-97cc-46d2920e91c6"],
+Cell[7541, 204, 234, 3, 70, "Text",ExpressionUUID->"4e6c5741-ad8a-4849-accc-640dabd9f2c6"],
+Cell[7775, 209, 412, 10, 70, "Input",ExpressionUUID->"df5a38e5-92c9-ae44-9fda-ddb9d70aec88"],
+Cell[8180, 221, 185, 3, 70, "Text",ExpressionUUID->"86cce042-4de5-eb47-80b8-956e554b76eb"]
+}
+]
+*)
+
+(* End of internal cache information *)

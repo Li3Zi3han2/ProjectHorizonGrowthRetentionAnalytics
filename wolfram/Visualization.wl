@@ -1,0 +1,48 @@
+(* Presentation only: validated outputs, no metric or model writes. *)
+HVisualize::usage="HVisualize[] exports Chinese figures from validated tables and scores.";
+HReadTable[name_]:=Module[{r=Import[HPath["outputs","tables",name],"CSV"]},AssociationThread[First[r],#]&/@Rest[r]];
+$HFigureFont=Module[{dir=Environment["WINDIR"]},If[StringQ[dir],Which[FileExistsQ[FileNameJoin[{dir,"Fonts","msyh.ttc"}]],"Microsoft YaHei",FileExistsQ[FileNameJoin[{dir,"Fonts","simhei.ttf"}]],"SimHei",True,Automatic],Automatic]];
+$HFigureStyle={FontFamily->$HFigureFont,FontSize->15};
+$HStageNames=<|"Register"->"注册","tutorial_start"->"开始新手引导","tutorial_complete"->"完成新手引导","core_loop_unlock"->"解锁核心循环","chapter_2"->"完成第二章","chapter_3"->"完成第三章"|>;
+$HChannelNames=<|"organic"->"自然流量","video_ads"->"视频广告","creator"->"内容创作者","referral"->"好友推荐","store_feature"->"商店推荐","cross_promo"->"交叉推广"|>;
+$HSegmentNames=<|"At-Risk Users"->"近期沉默用户","Core Engaged Users"->"核心活跃用户","Healthy New Users"->"健康新用户","High-Value Users"->"高价值用户","Highly Engaged Non-Payers"->"高活跃未付费用户","New & Unactivated"->"新注册未激活用户","Returning Users"->"回流用户"|>;
+$HFeatureNames=<|"sessions_d0_7"->"前八日会话次数","active_days_d0_7"->"前八日活跃天数","total_minutes_d0_7"->"前八日总游玩时长","avg_session_minutes"->"平均会话时长","tutorial_completed"->"完成引导","core_loop_unlocked"->"核心循环解锁","chapter_reached_d7"->"到达章节","boss_attempts_d0_7"->"首领战尝试次数","boss_failure_rate_d0_7"->"首领战失败率","social_interactions_d0_7"->"社交互动次数","activity_participation_d0_7"->"活动参与次数","crash_rate_d0_7"->"崩溃率","fps_quality"->"画面流畅度等级","first_purchase_flag_d0_7"->"早期首次购买","spend_d0_7"->"早期付费金额","registration_week"->"注册周","device=PC"->"设备：PC（相对安卓）","device=iOS"->"设备：iOS（相对安卓）"|>;
+HFigure[name_,g_]:=Module[{p=HPath["outputs","figures","wolfram",name<>".png"],r},r=Export[p,Labeled[g,Style["数据来源：Project Horizon 合成数据；PostgreSQL 事实；Wolfram 分析；跨语言校验状态见本次运行报告",FontFamily->$HFigureFont,FontSize->11],Bottom],ImageResolution->150];HAssert[StringQ[r]&&FileExistsQ[p],"primary figure "<>name];r];
+HLine[data_,title_,x_,y_,opts___]:=ListLinePlot[data,opts,Frame->True,Axes->False,FrameLabel->{x,y},PlotLabel->title,ImageSize->950,BaseStyle->$HFigureStyle,Background->White,ImagePadding->{{85,35},{65,55}}];
+HBar[data_,labels_,title_,x_,y_,opts___]:=Module[{extra={opts},ticks},ticks=FrameTicks/.extra/.FrameTicks->Automatic;If[ListQ[ticks],ticks=ticks[[1,1]]];extra=DeleteCases[extra,HoldPattern[FrameTicks->_]];BarChart[data,Sequence@@extra,FrameTicks->{{ticks,None},{Transpose[{Range[Length[labels]],labels}],None}},Frame->True,Axes->False,FrameLabel->{x,y},PlotLabel->title,ImageSize->1000,BaseStyle->$HFigureStyle,Background->White,ImagePadding->{{95,35},{100,55}}]];
+HPercentTicks[max_:1,step_:.1]:=Table[{v,ToString[Round[100 v]]<>"%"},{v,0,max,step}];
+Get[HPath["wolfram","PortfolioDisplay.wl"]];
+HExportPortfolioAssets[]:=Module[{dir=HPath["portfolio","assets"],pairs},
+ If[!DirectoryQ[dir],CreateDirectory[dir,CreateIntermediateDirectories->True]];
+ pairs={{"03_retention_curve","01_retention_curve"},{"04_cohort_heatmap","02_cohort_heatmap"},{"06_retention_device","03_device_d7"},{"07_funnel","04_core_funnel"},{"18_level12_friction","05_level12_friction"},{"19_model_calibration","06_model_calibration"},{"13_churn_signals","07_logistic_coefficients"},{"14_risk_decile_lift","08_risk_decile"},{"15_segments","09_segments"},{"16_reactivation","10_reactivation"},{"02_dau_composition","11_dau_composition"}};
+ Do[CopyFile[HPath["outputs","figures","wolfram",pair[[1]]<>".png"],FileNameJoin[{dir,pair[[2]]<>".png"}],OverwriteTarget->True],{pair,pairs}];
+];
+HVisualize[]:=Module[{curve,daily,ret,funnel,overall,weekly,seg,pred,coef,rows,vals,y,p,ord,t,fp,tp,cal,device,i,nodes,gate,ev},
+ curve=HReadTable["retention_curve.csv"];daily=HReadTable["daily_kpis.csv"];ret=HReadTable["retention_breakdown.csv"];funnel=HReadTable["funnel.csv"];overall=Select[funnel,#["dimension"]=="overall"&&#["stage_type"]=="core"&];
+ nodes={"增长与留存","获客质量","引导激活","成熟队列留存","市场与渠道","进度与性能","新增、存量与回流"};
+ HFigure["01_metric_tree",Graph[{1->2,1->3,1->4,2->5,3->6,4->7},VertexLabels->Thread[Range[7]->nodes],GraphLayout->"LayeredDigraphEmbedding",BaseStyle->$HFigureStyle,PlotLabel->"增长指标框架",ImageSize->950]];
+ HFigure["02_dau_composition",HDisplayDAU[daily]];
+ HFigure["03_retention_curve",HDisplayRetention[curve]];
+ weekly=HReadTable["weekly_retention.csv"];vals=Table[With[{v=Select[weekly,#["week"]==i&&#["d"]==d&]},If[v=={},Missing["未成熟"],First[v]["rate"]]],{i,0,25},{d,{1,7,30}}];
+ HFigure["04_cohort_heatmap",Labeled[MatrixPlot[vals,ColorFunction->Function[v,$HRetentionPalette[v/.4]],ColorFunctionScaling->False,ColorRules->{Missing["未成熟"]->White},FrameLabel->{{"留存观察日",None},{"注册周",None}},FrameTicks->{{Table[{i+1,i},{i,0,25}],None},{{{1,"第1日"},{2,"第7日"},{3,"第30日"}},None}},PlotLabel->"按注册周观察留存（空白为未成熟）",AspectRatio->.62,ImageSize->900,BaseStyle->$HFigureStyle,Background->White,ImagePadding->{{85,35},{65,55}}],BarLegend[{Function[v,$HRetentionPalette[v/.4]],{0,.4}},LegendLabel->"留存率",Ticks->HPercentTicks[.4],LabelStyle->$HFigureStyle],Right]];
+ rows=Select[ret,#["dimension"]=="channel"&&#["d"]==7&];HFigure["05_retention_channel",HBar[Lookup[rows,"rate"],Lookup[$HChannelNames,Lookup[rows,"category"]],"各渠道第7日留存","获客渠道","留存率",FrameTicks->{{HPercentTicks[.3,.05],None},{None,None}},PlotRange->{0,.3}]];
+ rows=Select[ret,#["dimension"]=="device"&&#["d"]==7&];HFigure["06_retention_device",HDisplayDevice[rows]];
+ HFigure["07_funnel",HDisplayFunnel[overall]];
+ device=GatherBy[Select[funnel,#["dimension"]=="device"&&#["stage_type"]=="core"&],#["category"]&];vals=Table[Lookup[g,"n"]/g[[1,"n"]],{g,device}];HFigure["08_funnel_device",HLine[vals,"各设备核心进度漏斗","进度阶段序号","占注册用户比例",PlotLegends->(#[[1,"category"]]&/@device),FrameTicks->{{HPercentTicks[],None},{Automatic,None}}]];
+ rows=Select[overall,#["step"]>1&];HFigure["09_progression_dropoff",HBar[Lookup[rows,"dropoff"],Lookup[$HStageNames,Lookup[rows,"name"]],"核心进度的条件流失","目标阶段","未进入下一阶段的比例",FrameTicks->{{HPercentTicks[.4],None},{None,None}}]];
+ pred=Rest[Import[HPath["outputs","models","wolfram_predictions.csv"],"CSV"]];y=N[pred[[All,2]]];p=pred[[All,3]];ord=Reverse[Ordering[p]];t=y[[ord]];tp=Accumulate[t]/Total[t];fp=Accumulate[1-t]/Total[1-t];
+ HFigure["10_roc",HLine[Transpose[{fp,tp}],"Logistic 时间测试集 ROC 曲线","假阳性率","真阳性率",PlotRange->{{0,1},{0,1}}]];
+ HFigure["11_pr",HLine[Transpose[{tp,Accumulate[t]/Range[Length[t]]}],"Logistic 时间测试集精确率与召回率","召回率","精确率",PlotRange->{{0,1},{0,1}}]];
+ cal=GatherBy[Transpose[{p,y}],Min[9,Floor[10 First[#]]]&];cal=SortBy[({Mean[#[[All,1]]],Mean[#[[All,2]]]}&/@cal),First];HFigure["12_calibration",HLine[{cal,{{0,0},{1,1}}},"Logistic 风险概率校准","预测流失概率","实际流失比例",PlotLegends->{"模型","理想校准"},PlotRange->{{0,1},{0,1}}]];
+ coef=Reverse[SortBy[HReadTable["logistic_coefficients.csv"],Abs[#["coefficient"]]&]];rows=Take[coef,UpTo[10]];
+ HFigure["13_churn_signals",HDisplayCoefficients[rows]];
+ ev=Import[HPath["outputs","models","wolfram_evaluation.json"],"RawJSON"];rows=HReadTable["risk_decile_lift.csv"];HFigure["14_risk_decile_lift",HDisplayDeciles[rows,ev["logistic"]]];
+ seg=HReadTable["segments.csv"];HFigure["15_segments",HDisplaySegments[seg]];
+ HFigure["16_reactivation",HDisplayReturn[Import[HPath["outputs","metrics","reactivation.json"],"RawJSON"]]];
+ HFigure["17_experiments",Graphics[Map[Function[pair,Text[Style[pair[[2]],FontFamily->$HFigureFont,FontSize->17],{.5,.9-.28 pair[[1]]}]],{{0,"实验 A：首次第12级尝试 → 当日至第3日完成第三章"},{1,"实验 B：第7日高风险用户 → 第30日当日留存"},{2,"实验 C：沉默后首次回流 → 返回后七日活跃天数"}}],PlotRange->{{0,1},{0,1}},PlotLabel->Style["待验证的用户随机实验",$HFigureStyle],ImageSize->1100,Background->White]];
+ gate=First[Select[HReadTable["progression_diagnosis.csv"],#["level"]==12&]];
+ HFigure["18_level12_friction",HDisplayGate[gate]];
+ ev=Import[HPath["outputs","models","wolfram_evaluation.json"],"RawJSON"];
+ HFigure["19_model_calibration",HDisplayCalibration[cal]];
+ HExportPortfolioAssets[];
+];

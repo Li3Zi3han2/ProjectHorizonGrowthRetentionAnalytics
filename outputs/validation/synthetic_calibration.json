@@ -1,0 +1,205 @@
+{
+	"values":{
+		"users":200000,
+		"sessions":2.419602e6,
+		"active_user_days":1805910,
+		"sessions_per_active_day":1.3398242437330763,
+		"multi_session_day_fraction":0.32612533293464235,
+		"d1_retention":0.320561420466273,
+		"d7_retention":0.17005398705991093,
+		"d30_retention":0.10438152384524033,
+		"payer_conversion":3.3185e-2,
+		"arpu":0.4240542,
+		"arppu":1.2778490281753804e1,
+		"chapter2_to_chapter3_conversion":0.7264334145217562,
+		"level12_boss_failure_rate":0.6267082741357147,
+		"android_d7_retention":0.15567620467890764,
+		"pc_d7_retention":0.1886387544708605,
+		"ios_d7_retention":0.17620149332211588,
+		"device_max_gap":3.296254979195287e-2,
+		"reactivation_eligible":68635,
+		"reactivation_rate":0.14773803453048737,
+		"logistic_auc":0.6839645854953073,
+		"nonlinear_auc":0.6842591978955271,
+		"lift_at_10pct":1.4414196410566646
+	},
+	"diagnostics":[
+		{
+			"metric":"users",
+			"value":2.0e5,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"sessions",
+			"value":2.419602e6,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"active_user_days",
+			"value":1.80591e6,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"sessions_per_active_day",
+			"value":1.3398242437330763,
+			"target_band_low":1.2,
+			"target_band_high":1.6,
+			"status":"WITHIN_DESIGN_BAND",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"multi_session_day_fraction",
+			"value":0.32612533293464235,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"d1_retention",
+			"value":0.320561420466273,
+			"target_band_low":0.3,
+			"target_band_high":0.5,
+			"status":"WITHIN_DESIGN_BAND",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"d7_retention",
+			"value":0.17005398705991093,
+			"target_band_low":0.12,
+			"target_band_high":0.3,
+			"status":"WITHIN_DESIGN_BAND",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"d30_retention",
+			"value":0.10438152384524033,
+			"target_band_low":5.0e-2,
+			"target_band_high":0.18,
+			"status":"WITHIN_DESIGN_BAND",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"payer_conversion",
+			"value":3.3185e-2,
+			"target_band_low":2.0e-2,
+			"target_band_high":0.1,
+			"status":"WITHIN_DESIGN_BAND",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"arpu",
+			"value":0.4240542,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"arppu",
+			"value":1.2778490281753804e1,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"chapter2_to_chapter3_conversion",
+			"value":0.7264334145217562,
+			"target_band_low":0.55,
+			"target_band_high":0.75,
+			"status":"WITHIN_DESIGN_BAND",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"level12_boss_failure_rate",
+			"value":0.6267082741357147,
+			"target_band_low":0.55,
+			"target_band_high":0.8,
+			"status":"WITHIN_DESIGN_BAND",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"android_d7_retention",
+			"value":0.15567620467890764,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"pc_d7_retention",
+			"value":0.1886387544708605,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"ios_d7_retention",
+			"value":0.17620149332211588,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"device_max_gap",
+			"value":3.296254979195287e-2,
+			"target_band_low":2.0e-2,
+			"target_band_high":8.0e-2,
+			"status":"WITHIN_DESIGN_BAND",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"reactivation_eligible",
+			"value":6.8635e4,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"reactivation_rate",
+			"value":0.14773803453048737,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"logistic_auc",
+			"value":0.6839645854953073,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"nonlinear_auc",
+			"value":0.6842591978955271,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		},
+		{
+			"metric":"lift_at_10pct",
+			"value":1.4414196410566646,
+			"target_band_low":null,
+			"target_band_high":null,
+			"status":"OBSERVED",
+			"band_type":"synthetic design guardrail; not industry benchmark"
+		}
+	],
+	"guardrail_note":"Soft synthetic design guardrails, not industry benchmarks or seed optimization targets."
+}

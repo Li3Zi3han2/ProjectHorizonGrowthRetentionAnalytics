@@ -1,0 +1,59 @@
+{
+  "users": 20000,
+  "simulation_days": 180,
+  "seed": 20261005,
+  "overall_d1": 0.32343616325298175,
+  "overall_d7": 0.1686911710574749,
+  "overall_d30": 0.10874053682037164,
+  "activation_rate": 0.8854183099332177,
+  "activation_definition": "D7 core-loop unlock: D0-D7 unlock among mature D7 registrations",
+  "largest_core_funnel_drop": "chapter_3",
+  "largest_core_funnel_drop_fraction": 0.279557558377714,
+  "largest_optional_adoption_drop": "social_interaction",
+  "highest_risk_device": "Android",
+  "device_d7_gap": 0.0344240441788633,
+  "chapter3_completion_given_chapter2": 0.720442441622286,
+  "chapter3_gate_level": 12,
+  "chapter3_gate_failure_rate": 0.6310268138139399,
+  "top_churn_signals": [
+    "active_days_d0_7",
+    "sessions_d0_7",
+    "avg_session_minutes",
+    "chapter_reached_d7",
+    "total_minutes_d0_7"
+  ],
+  "churn_signal_families": [
+    "早期活跃强度",
+    "主线进度"
+  ],
+  "model_auc": 0.6843953489976096,
+  "model_pr_auc": 0.7529922544767491,
+  "model_brier": 0.2196384299351279,
+  "lift_at_10pct": 1.486208316179498,
+  "capture_at_10pct": 0.14862083161794978,
+  "nonlinear_auc": 0.6822096471030887,
+  "nonlinear_auc_gain": -0.0021857018945208306,
+  "model_comparison_narrative": "非线性模型没有产生实质 discrimination gain；当前瓶颈更可能是可观测信息。Logistic 的解释性与较低部署成本适合作为运营 ranking baseline。",
+  "reactivation_eligible": 6822,
+  "reactivation_count": 1015,
+  "reactivation_rate": 0.14878334799179127,
+  "post_return_active_days": 2.567487684729064,
+  "payer_conversion": 0.0341,
+  "arpu": 0.44878500000000004,
+  "key_recommendations": [
+    "首次 Level 12 尝试时随机验证关卡优化",
+    "按设备市场版本分层随机验证性能改善",
+    "D7 top10% 保留对照验证扶持；回流用户随机比较导航"
+  ],
+  "parity": {
+    "descriptive_checks": 1601,
+    "model_checks": 22,
+    "failures": 0,
+    "status": "PASS"
+  },
+  "run_mode": "fast/debug",
+  "portfolio_pages": 11,
+  "disclosure": "Project Horizon is a fictional game. All user-level and event-level data in this repository are synthetically generated for portfolio demonstration purposes. No proprietary, confidential, or real player data are used.",
+  "analysis_engine": "wolfram",
+  "dataset_sha256": "ad168c2e02b285d5044c597cdd40d63cd3963928c5cf82d53732fdb5b5eb6212"
+}

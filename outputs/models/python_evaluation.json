@@ -1,0 +1,77 @@
+{
+  "logistic": {
+    "roc_auc": 0.6839645905131253,
+    "pr_auc": 0.7700623459399804,
+    "brier": 0.21610336734793562,
+    "precision": 0.6585834409347149,
+    "recall": 0.8433958459366808,
+    "f1": 0.7396194383532574,
+    "confusion_matrix": [
+      [
+        5234,
+        10841
+      ],
+      [
+        3883,
+        20912
+      ]
+    ],
+    "threshold": 0.5,
+    "lift_at_10pct": 1.4414196410566646,
+    "capture_at_10pct": 0.14414196410566646
+  },
+  "nonlinear": {
+    "roc_auc": 0.6824101959551997,
+    "pr_auc": 0.7687324786366369,
+    "brier": 0.2149339184399367,
+    "precision": 0.6814133765999639,
+    "recall": 0.7622101230086711,
+    "f1": 0.719550732914525,
+    "confusion_matrix": [
+      [
+        7239,
+        8836
+      ],
+      [
+        5896,
+        18899
+      ]
+    ],
+    "threshold": 0.5,
+    "lift_at_10pct": 1.4406130268199233,
+    "capture_at_10pct": 0.14406130268199233
+  },
+  "train_n": 85045,
+  "validation_n": 34075,
+  "test_n": 40870,
+  "nonlinear_train_n": 30000,
+  "feature_names": [
+    "sessions_d0_7",
+    "active_days_d0_7",
+    "total_minutes_d0_7",
+    "avg_session_minutes",
+    "tutorial_completed",
+    "core_loop_unlocked",
+    "chapter_reached_d7",
+    "boss_attempts_d0_7",
+    "boss_failure_rate_d0_7",
+    "social_interactions_d0_7",
+    "activity_participation_d0_7",
+    "crash_rate_d0_7",
+    "fps_quality",
+    "first_purchase_flag_d0_7",
+    "spend_d0_7",
+    "registration_week",
+    "market=DE",
+    "market=JP",
+    "market=KR",
+    "market=US",
+    "channel=cross_promo",
+    "channel=organic",
+    "channel=referral",
+    "channel=store_feature",
+    "channel=video_ads",
+    "device=PC",
+    "device=iOS"
+  ]
+}

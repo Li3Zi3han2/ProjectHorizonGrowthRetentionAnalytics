@@ -1,0 +1,45 @@
+{
+  "source": "Historical published Wolfram Full data; read-only capture",
+  "seed": 20261005,
+  "users": 200000,
+  "code_sha256": "cb0903f84c2e2fdf28660f5f2e4a84affa4a6d3f2423d5941b0e92840510c54f",
+  "executed_at": "2026-10-08T12:25:33.432999+00:00",
+  "row_counts": {
+    "users": 200000,
+    "sessions": 2419602,
+    "progression": 1805910,
+    "gameplay_events": 3957854,
+    "monetization": 8916,
+    "acquisition": 200000,
+    "content_exposure": 254418
+  },
+  "table_sha256": {
+    "users": "11c5c304a59240a548c449acd1c5c6bc112b409515a69e1ac7ed79985a09370d",
+    "sessions": "c5555f3bac8c581e0668120074a45f3e3ede6f6be042e22ff4cf85b5ca2ac8f9",
+    "progression": "1592af97aa6fd504314baeded3bd110180a692d8fa60a9cdca7c3a87b07acc5f",
+    "gameplay_events": "b56cf26141dcb4294861870185ec5f4eecd548abfbb4b1b2303dccc15c1eb11f",
+    "monetization": "f81109cc087f0334ce12b2acd35a65013d25451aaaf4b62414b3a69859648fd5",
+    "acquisition": "2f2fad8b93118e03005282cca6f8119400e4a8082303721e46ee61cdb4fadf7c",
+    "content_exposure": "61b4dedafedf2ec77adaa54133206fd4013e8abd735b2c66785053257daa0d52"
+  },
+  "dataset_sha256": "1acfd15c335a230cd06be110438e7137ab0ce949688f9e1f3604481b8a14ab45",
+  "metrics": {
+    "users": 200000,
+    "retention/d1": 0.320561420466273,
+    "retention/d7": 0.17005398705991093,
+    "retention/d30": 0.10438152384524033,
+    "payer_conversion": 0.033185,
+    "arpu": 0.4240542,
+    "return_rate": 0.14773803453048737,
+    "reactivation/eligible": 68635,
+    "reactivation/returned": 10140,
+    "reactivation/post_return_days7": 2.5505917159763314
+  },
+  "tolerances": {
+    "exact_counts": 0,
+    "same_data_descriptive_absolute": 1e-10,
+    "same_data_descriptive_relative": 1e-08,
+    "different_generator": "Report actual differences; no blanket numerical PASS tolerance"
+  },
+  "reconstruction": "Exact original generator requires the recorded Wolfram environment; NumPy seed alone does not reconstruct these rows. This aggregate fixture does not replace analysis or certify different data."
+}

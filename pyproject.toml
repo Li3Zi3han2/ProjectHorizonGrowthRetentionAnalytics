@@ -1,0 +1,8 @@
+[project]
+name = "project-horizon-growth-retention"
+version = "1.0.0"
+requires-python = ">=3.11"
+description = "Wolfram primary synthetic game analytics with PostgreSQL and independent Python parity"
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

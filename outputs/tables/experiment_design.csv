@@ -1,0 +1,4 @@
+experiment,population,primary,eligible_n,completed_n,baseline,mde,per_arm,treatment,guardrails
+A,First Level 12 boss attempt; user 1:1 randomization at exposure,Chapter 3 completion within 3 days of first Level 12 attempt,151582,106257.0,0.7009869245688802,0.025,5133,关卡难度、资源或引导优化,"Mature D7/D14 retention, crashes, playtime, spend, downstream progression"
+B,Top decile risk ranked at D7,Exact-day D30 retention,4087,,0.037435771959872764,0.03,850,个性化任务提示与资源扶持,"Crashes, spend, opt-out; D22-D30 activity secondary"
+C,14-day silent users randomized at observed return,Post-return D0-D6 active days,10140,,2.5505917159763314,0.3,235,个性化回流内容导航,"Crashes, disengagement, spend"

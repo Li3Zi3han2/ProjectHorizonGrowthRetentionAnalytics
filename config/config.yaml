@@ -1,0 +1,14 @@
+users: 200000
+fast_users: 20000
+simulation_days: 180
+seed: 20261005
+start_date: '2026-01-01'
+end_date: '2026-06-29'
+batch_size: 1000
+observation_window: [0, 7]
+target_window: [22, 30]
+train_end_day: 89
+validation_end_day: 119
+nonlinear_training_cap: 30000
+absolute_tolerance: 1.0e-10
+relative_tolerance: 1.0e-8

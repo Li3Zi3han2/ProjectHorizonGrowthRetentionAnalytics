@@ -1,0 +1,28 @@
+{
+	"A":{
+		"baseline":0.7009869245688802,
+		"eligible_n":151582,
+		"completed_n":106257,
+		"gate_level":12,
+		"gate_failure_rate_d0_7":0.6267082741357147,
+		"absolute_mde":2.5e-2,
+		"per_arm":5133,
+		"population":"First Level 12 boss attempt; user 1:1 randomization at exposure",
+		"primary":"Chapter 3 completion within 3 days of first Level 12 attempt"
+	},
+	"B":{
+		"baseline":3.7435771959872764e-2,
+		"absolute_mde":3.0e-2,
+		"per_arm":850,
+		"population":"Top decile ranked at D7",
+		"primary":"Exact-day D30 retention"
+	},
+	"C":{
+		"assignment":"returning user randomized at return; complete D0-D6 followup",
+		"primary":"post-return active days",
+		"mde_days":0.3
+	},
+	"alpha":5.0e-2,
+	"power":0.8,
+	"status":"Planning assumptions, no experiment executed"
+}

@@ -1,0 +1,7 @@
+{
+	"same_seed_same_simulation":true,
+	"different_seed_changes_simulation":true,
+	"no_progression_regression":true,
+	"positive_session_minutes":true,
+	"notebook_input_cells_executed":13
+}

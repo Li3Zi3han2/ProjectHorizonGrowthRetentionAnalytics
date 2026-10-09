@@ -1,0 +1,10 @@
+check_name,failures
+orphan_events,0
+bad_progression_date,0
+bad_payment_date,0
+bad_exposure_date,0
+bad_sessions,0
+bad_session_sequence,0
+duplicate_progression_day,0
+null_users,0
+null_sessions,0

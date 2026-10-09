@@ -1,0 +1,23 @@
+comparison,wolfram_result,python_result,agreement_rule,status
+logistic_coefficient_direction,1.0,1,all stable |coefficient|>0.03 have identical sign,PASS
+logistic_risk_rank_spearman,0.9999999999999999,1,absolute coefficient rank correlation >=0.9,PASS
+logistic/roc_auc,0.6839645854953073,0.6839645905131253,absolute difference <=0.045,PASS
+logistic/pr_auc,0.7700623264891899,0.7700623459399804,absolute difference <=0.05,PASS
+logistic/brier,0.2161033672616404,0.21610336734793562,absolute difference <=0.035,PASS
+logistic/lift_at_10pct,1.4414196410566646,1.4414196410566646,absolute difference <=0.2,PASS
+wolfram/logistic/classification_sanity,40870,40870,counts and recomputed precision/recall/F1,PASS
+python/logistic/classification_sanity,40870,40870,counts and recomputed precision/recall/F1,PASS
+logistic/precision,0.6585834409347149,0.6585834409347149,absolute difference <=0.02,PASS
+logistic/recall,0.8433958459366808,0.8433958459366808,absolute difference <=0.02,PASS
+logistic/f1,0.7396194383532575,0.7396194383532574,absolute difference <=0.02,PASS
+logistic/top_decile_overlap,1.0,1,overlap >=0.95,PASS
+nonlinear/roc_auc,0.6842591978955271,0.6824101959551997,absolute difference <=0.045,PASS
+nonlinear/pr_auc,0.7697870558106377,0.7687324786366369,absolute difference <=0.05,PASS
+nonlinear/brier,0.21478271789120287,0.2149339184399367,absolute difference <=0.035,PASS
+nonlinear/lift_at_10pct,1.442226255293406,1.4406130268199233,absolute difference <=0.2,PASS
+wolfram/nonlinear/classification_sanity,40870,40870,counts and recomputed precision/recall/F1,PASS
+python/nonlinear/classification_sanity,40870,40870,counts and recomputed precision/recall/F1,PASS
+nonlinear/top_decile_overlap,0.7609493516026425,1,overlap >=0.6,PASS
+largest_core_funnel_drop,chapter_2,chapter_2,same core transition,PASS
+highest_risk_device,Android,Android,same D7 lowest retention device,PASS
+leading_churn_signals,"active_days_d0_7, activity_participation_d0_7, avg_session_minutes, chapter_reached_d7, sessions_d0_7","active_days_d0_7, activity_participation_d0_7, avg_session_minutes, chapter_reached_d7, sessions_d0_7",at least 4 of top5 identical,PASS
